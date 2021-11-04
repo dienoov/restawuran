@@ -1,3 +1,44 @@
+@font-face {
+  font-family: 'Post Grotesk';
+  src: url("../public/fonts/PostGrotesk-Book-subset.woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Post Grotesk';
+  src: url("../public/fonts/PostGrotesk-Medium-subset.woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Post Grotesk';
+  src: url("../public/fonts/PostGrotesk-Bold-subset.woff");
+  font-weight: 700;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Post Grotesk', sans-serif;
+}
+
 img {
-    display: block;
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
