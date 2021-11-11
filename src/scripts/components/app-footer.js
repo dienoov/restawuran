@@ -14,13 +14,13 @@ class AppFooter extends HTMLElement {
             <div class="${container.lg}">
                 <div class="${appFooterStyle.wrapper}">
                     <div class="${appFooterStyle.social}">
-                        <a href="//github.com/dienoov" target="_blank">
+                        <a href="//github.com/dienoov" target="_blank" rel="noopener" title="Github">
                             <img src="${github}" alt="Github">
                         </a>
-                        <a href="//instagram.com/dienoov" target="_blank">
+                        <a href="//instagram.com/dienoov" target="_blank" rel="noopener" title="Instagram">
                             <img src="${instagram}" alt="Instagram">
                         </a>
-                        <a href="//twitter.com/dienoov" target="_blank">
+                        <a href="//twitter.com/dienoov" target="_blank" rel="noopener" title="Twitter">
                             <img src="${twitter}" alt="Twitter">
                         </a>
                     </div>

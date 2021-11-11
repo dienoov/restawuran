@@ -17,7 +17,7 @@ class AppBar extends HTMLElement {
                 <ul class="${appBarStyle.navbar}">
                     <li><a href="/" title="Home">Home</a></li>
                     <li><a href="#" title="Favorite">Favorite</a></li>
-                    <li><a href="//dienoov.github.io" target="_blank" title="About">About Us</a></li>
+                    <li><a href="//dienoov.github.io" target="_blank" rel="noopener" title="About">About Us</a></li>
                 </ul>
             </nav>
         </header>
