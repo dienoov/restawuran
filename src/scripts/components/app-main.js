@@ -11,7 +11,7 @@ class AppMain extends HTMLElement {
     this.html = `
         <main id="content">
             <div class="${container.lg}">
-                <h2 tabindex="0">Browse All Restaurants</h2>
+                <h2>Browse All Restaurants</h2>
                 <div class="${appMainStyle.wrapper}"></div>
             </div>
         </main>
@@ -20,6 +20,7 @@ class AppMain extends HTMLElement {
 
   static renderCard(restaurant) {
     const article = document.createElement('article');
+    const link = document.createElement('a');
     const img = document.createElement('img');
     const header = document.createElement('header');
     const title = document.createElement('h3');
@@ -29,33 +30,30 @@ class AppMain extends HTMLElement {
     const body = document.createElement('section');
     const description = document.createElement('p');
 
-    article.tabIndex = 0;
+    link.href = '#';
+    link.title = `View ${restaurant.name} detail`;
 
     img.src = restaurant.pictureId;
-    img.alt = restaurant.name;
-    img.tabIndex = 0;
+    img.alt = `${restaurant.name} image`;
 
     title.innerText = restaurant.name;
-    title.tabIndex = 0;
 
     location.classList.add(appMainStyle.location);
     location.innerText = restaurant.city;
-    location.tabIndex = 0;
 
     rating.classList.add(appMainStyle.rating);
     rating.innerText = 'Rating';
-    rating.tabIndex = 0;
 
     rate.innerText = restaurant.rating;
 
     description.innerText = restaurant.description;
-    description.tabIndex = 0;
 
     rating.append(rate);
     header.append(title, location, rating);
     body.append(description);
     article.append(img, header, body);
-    return article;
+    link.append(article);
+    return link;
   }
 
   connectedCallback() {

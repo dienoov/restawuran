@@ -12,9 +12,9 @@ class AppRecipe extends HTMLElement {
         <div id="recipe">
             <div class="${container.lg}">
                 <div class="${appRecipeStyle.wrapper}">
-                    <article tabindex="0">
+                    <article>
                         <header>
-                            <h2 tabindex="0">Random Recipe</h2>
+                            <h2>Random Recipe</h2>
                         </header>
                         <section></section>
                     </article>
@@ -38,7 +38,6 @@ class AppRecipe extends HTMLElement {
 
     axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
       .then(({ data: { meals: [meal] } }) => {
-        console.log(meal);
         const img = document.createElement('img');
         const title = document.createElement('h3');
         const instructions = document.createElement('p');
@@ -46,13 +45,10 @@ class AppRecipe extends HTMLElement {
 
         img.src = meal.strMealThumb;
         img.alt = meal.strMeal;
-        img.tabIndex = 0;
 
         title.innerText = meal.strMeal;
-        title.tabIndex = 0;
 
         instructions.innerText = meal.strInstructions.replace(/\n|\r/g, ' ');
-        instructions.tabIndex = 0;
 
         link.innerText = 'View full recipe and method';
         link.href = '#';
