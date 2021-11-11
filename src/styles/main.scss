@@ -30,7 +30,7 @@
 
 *:focus {
   outline: 3px solid black;
-  outline-offset: -3px;
+  outline-offset: 3px;
 }
 
 html {
@@ -66,4 +66,20 @@ a, button {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Sharp Sans', serif;
+}
+
+a[href="#content"] {
+  position: absolute;
+  top: 0;
+  left: -150px;
+  margin: 10px;
+  padding: 10px;
+  transition: left .3s ease-out;
+  background-color: black;
+  color: #f7f2ee;
+  z-index: 1;
+
+  &:focus {
+    left: 0;
+  }
 }

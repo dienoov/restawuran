@@ -34,10 +34,14 @@ class AppBar extends HTMLElement {
     this.innerHTML = this.html;
   }
 
+  toggle() {
+    this.querySelector('nav').classList.toggle(appBarStyle.show);
+  }
+
   clickListener(ev) {
     if (!ev.target.closest('#menu-toggle')) return;
 
-    this.querySelector('nav').classList.toggle(appBarStyle.show);
+    this.toggle();
   }
 }
 

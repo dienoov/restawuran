@@ -13,8 +13,6 @@ app-bar {
   }
 
   .site-title {
-    z-index: 1;
-
     a {
       font-size: 10px;
       font-weight: bold;
@@ -67,6 +65,7 @@ app-bar {
     overflow: hidden;
     transition: max-height .3s ease-out, visibility 0s linear .3s;
     visibility: hidden;
+    z-index: 1;
 
     @media (min-width: 576px) {
       max-height: none;
@@ -90,7 +89,6 @@ app-bar {
       display: flex;
       justify-content: flex-start;
       flex-direction: column;
-      margin-right: -16px;
 
       @media (min-width: 576px) {
         flex-direction: row;
@@ -112,6 +110,10 @@ app-bar {
           align-items: flex-start;
           padding: 25px 32px 20px;
           transition: background-color .3s ease-out;
+
+          &:focus {
+            outline-offset: -6px;
+          }
 
           @media (min-width: 576px) {
             &:hover {
