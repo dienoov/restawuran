@@ -3,3 +3,4 @@ import '../styles/main.scss';
 import './components/app-bar';
 import './components/app-hero';
 import './components/app-main';
+import './components/app-recipe';

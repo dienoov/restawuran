@@ -6,7 +6,7 @@ class AppMain extends HTMLElement {
   constructor() {
     super();
 
-    this.restaurants = restaurants.map(this.renderCard);
+    this.restaurants = restaurants.map(AppMain.renderCard);
 
     this.html = `
         <main id="content">
@@ -18,7 +18,7 @@ class AppMain extends HTMLElement {
     `;
   }
 
-  renderCard(restaurant) {
+  static renderCard(restaurant) {
     const article = document.createElement('article');
     const img = document.createElement('img');
     const header = document.createElement('header');
