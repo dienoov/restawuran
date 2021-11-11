@@ -24,21 +24,31 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   font-family: 'Post Grotesk', sans-serif;
+  overflow-x: hidden;
 }
 
 img {
   display: block;
+  max-width: 100%;
 }
 
 ol, ul {
   list-style: none;
 }
 
-a {
+a, button {
   text-decoration: none;
   color: inherit;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
 }

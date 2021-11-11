@@ -1,0 +1,121 @@
+app-bar {
+  display: block;
+  background-color: #f7f2ee;
+  border-bottom: 1px solid #ebebeb;
+  width: 100%;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 64px;
+  }
+
+  .site-title {
+    z-index: 1;
+
+    a {
+      font-size: 10px;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 1.5;
+      letter-spacing: 2px;
+      padding: 12px 8px 8px 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border: 2px solid black;
+      color: black;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    z-index: 1;
+
+    @media (min-width: 576px) {
+      display: none;
+    }
+
+    .hamburger, .hamburger::before, .hamburger::after {
+      display: block;
+      width: 44px;
+      height: 4px;
+      background-color: black;
+    }
+
+    .hamburger::before {
+      content: "";
+      transform: translateY(-14px);
+    }
+
+    .hamburger::after {
+      content: "";
+      transform: translateY(10px);
+    }
+  }
+
+  nav {
+    position: absolute;
+    top: 64px;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease-out;
+
+    @media (min-width: 576px) {
+      max-height: none;
+      position: initial;
+      background-color: transparent;
+      overflow: visible;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &.show {
+      max-height: 250px;
+      transform: translate(0);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      margin-right: -16px;
+
+      @media (min-width: 576px) {
+        flex-direction: row;
+      }
+
+      li {
+        border-bottom: 1px solid #ebebeb;
+
+        @media (min-width: 576px) {
+          border-bottom: none;
+          font-size: 13px;
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+
+        a {
+          position: relative;
+          align-items: flex-start;
+          padding: 25px 32px 20px;
+          transition: background-color .3s ease-out;
+
+          @media (min-width: 576px) {
+            &:hover {
+              background-color: black;
+              color: #f7f2ee;
+            }
+          }
+        }
+      }
+    }
+  }
+}
