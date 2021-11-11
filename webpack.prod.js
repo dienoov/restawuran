@@ -41,6 +41,12 @@ module.exports = merge(common, {
             },
           },
         ],
+      }, {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[contenthash].[ext]',
+        },
       },
     ],
   },
