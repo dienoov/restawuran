@@ -65,7 +65,8 @@ app-bar {
     background-color: white;
     max-height: 0;
     overflow: hidden;
-    transition: max-height .3s ease-out;
+    transition: max-height .3s ease-out, visibility 0s linear .3s;
+    visibility: hidden;
 
     @media (min-width: 576px) {
       max-height: none;
@@ -74,11 +75,15 @@ app-bar {
       overflow: visible;
       display: flex;
       justify-content: flex-end;
+      visibility: visible;
+      transition: max-height .3s ease-out, visibility 0s linear;
     }
 
     &.show {
       max-height: 250px;
       transform: translate(0);
+      visibility: visible;
+      transition: max-height .3s ease-out, visibility 0s linear
     }
 
     .navbar {
