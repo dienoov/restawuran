@@ -1,9 +1,9 @@
-import appFooterStyle from '../../styles/components/app-footer.scss';
-import container from '../../styles/container.scss';
+import appFooterStyle from '../../../styles/components/app-footer.scss';
+import container from '../../../styles/container.scss';
 
-import github from '../../public/images/icons/icons8-github.svg';
-import instagram from '../../public/images/icons/icons8-instagram.svg';
-import twitter from '../../public/images/icons/icons8-twitter.svg';
+import github from '../../../images/icons/icons8-github.svg';
+import instagram from '../../../images/icons/icons8-instagram.svg';
+import twitter from '../../../images/icons/icons8-twitter.svg';
 
 class AppFooter extends HTMLElement {
   constructor() {

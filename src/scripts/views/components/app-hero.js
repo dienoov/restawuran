@@ -1,8 +1,8 @@
-import appHeroStyle from '../../styles/components/app-hero.scss';
-import heroImage1 from '../../public/images/heros/hero-image_1.jpg';
-import heroImage2 from '../../public/images/heros/hero-image_2.jpg';
-import heroImage3 from '../../public/images/heros/hero-image_3.jpg';
-import heroImage4 from '../../public/images/heros/hero-image_4.jpg';
+import appHeroStyle from '../../../styles/components/app-hero.scss';
+import heroImage1 from '../../../images/heros/hero-image_1.jpg';
+import heroImage2 from '../../../images/heros/hero-image_2.jpg';
+import heroImage3 from '../../../images/heros/hero-image_3.jpg';
+import heroImage4 from '../../../images/heros/hero-image_4.jpg';
 
 class AppHero extends HTMLElement {
   constructor() {

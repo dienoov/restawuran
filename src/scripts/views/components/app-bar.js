@@ -1,5 +1,5 @@
-import container from '../../styles/container.scss';
-import appBarStyle from '../../styles/components/app-bar.scss';
+import container from '../../../styles/container.scss';
+import appBarStyle from '../../../styles/components/app-bar.scss';
 
 class AppBar extends HTMLElement {
   constructor() {

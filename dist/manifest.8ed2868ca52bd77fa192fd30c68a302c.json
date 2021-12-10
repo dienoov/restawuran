@@ -1,0 +1,78 @@
+{
+  "icons": [
+    {
+      "src": "icons/icon_1024x1024.d2e9f891cb19b1584cc028a253478655.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon_1024x1024.22b185a67a9b0d16b25b480f276dba6e.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon_512x512.824c26bbea6824d0fce2eb7ae4fc7779.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon_384x384.3ed0dce727da75b740a1a212cb21e9a1.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon_256x256.7e24fa635cc939ff8e904d6988707381.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon_192x192.157248cf1473a4c12a0b4f8e1154d19d.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon_152x152.7f004b400e97fa02ed1c70abb5156ac3.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon_144x144.d0ede713e7852f47c604df822466ea29.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon_128x128.33f0cca1c19eb705624d5977b88416e1.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon_96x96.48977791bcbf85fb09015aae78526ca4.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon_72x72.29403988586a3a427ec80ee0e4fe1b2c.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "name": "Restawuran",
+  "short_name": "Restawuran",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/index.html",
+  "description": "Your destination for all things delicious.",
+  "background_color": "#f7f2ee",
+  "theme_color": "#000000"
+}

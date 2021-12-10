@@ -1,6 +1,6 @@
 import axios from 'axios';
-import appRecipeStyle from '../../styles/components/app-recipe.scss';
-import container from '../../styles/container.scss';
+import appRecipeStyle from '../../../styles/components/app-recipe.scss';
+import container from '../../../styles/container.scss';
 
 class AppRecipe extends HTMLElement {
   constructor() {

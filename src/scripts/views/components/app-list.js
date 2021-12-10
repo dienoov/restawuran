@@ -1,20 +1,18 @@
-import appMainStyle from '../../styles/components/app-main.scss';
-import container from '../../styles/container.scss';
-import { restaurants } from '../../DATA.json';
+import appMainStyle from '../../../styles/components/app-list.scss';
+import container from '../../../styles/container.scss';
+import { restaurants } from '../../../DATA.json';
 
-class AppMain extends HTMLElement {
+class AppList extends HTMLElement {
   constructor() {
     super();
 
-    this.restaurants = restaurants.map(AppMain.renderCard);
+    this.restaurants = restaurants.map(AppList.renderCard);
 
     this.html = `
-        <main id="content">
-            <div class="${container.lg}">
-                <h2>Browse All Restaurants</h2>
-                <div class="${appMainStyle.wrapper}"></div>
-            </div>
-        </main>
+        <div class="${container.lg}">
+            <h2>Browse All Restaurants</h2>
+            <div class="${appMainStyle.wrapper}"></div>
+        </div>
     `;
   }
 
@@ -67,4 +65,4 @@ class AppMain extends HTMLElement {
   }
 }
 
-customElements.define('app-main', AppMain);
+customElements.define('app-list', AppList);
