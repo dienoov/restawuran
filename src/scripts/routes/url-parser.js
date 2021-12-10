@@ -1,16 +1,16 @@
 class UrlParser {
   static parseActiveUrlWithCombiner() {
     const url = window.location.hash.slice(1).toLowerCase();
-    const splitedUrl = this.urlSplitter(url);
-    return this.urlCombiner(splitedUrl);
+    const splitedUrl = this._urlSplitter(url);
+    return this._urlCombiner(splitedUrl);
   }
 
   static parseActiveUrlWithoutCombiner() {
     const url = window.location.hash.slice(1).toLowerCase();
-    return this.urlSplitter(url);
+    return this._urlSplitter(url);
   }
 
-  static urlSplitter(url) {
+  static _urlSplitter(url) {
     const urlsSplits = url.split('/');
     return {
       resource: urlsSplits[1] || null,
@@ -19,7 +19,7 @@ class UrlParser {
     };
   }
 
-  static urlCombiner(splitedUrl) {
+  static _urlCombiner(splitedUrl) {
     return (splitedUrl.resource ? `/${splitedUrl.resource}` : '/')
             + (splitedUrl.id ? '/:id' : '')
             + (splitedUrl.verb ? `/${splitedUrl.verb}` : '');

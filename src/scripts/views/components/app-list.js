@@ -1,22 +1,23 @@
-import appMainStyle from '../../../styles/components/app-list.scss';
+import appListStyle from '../../../styles/components/app-list.scss';
 import container from '../../../styles/container.scss';
-import { restaurants } from '../../../DATA.json';
+import DicodingRestaurant from '../../globals/dicoding-restaurant/dicoding-restaurant';
+// import { restaurants } from '../../../DATA.json';
 
 class AppList extends HTMLElement {
   constructor() {
     super();
 
-    this.restaurants = restaurants.map(AppList.renderCard);
+    // this._restaurants = restaurants.map(AppList.renderCard);
 
     this.html = `
         <div class="${container.lg}">
             <h2>Browse All Restaurants</h2>
-            <div class="${appMainStyle.wrapper}"></div>
+            <div id="restaurants" class="${appListStyle.wrapper}"></div>
         </div>
     `;
   }
 
-  static renderCard(restaurant) {
+  static restaurantCard(restaurant) {
     const article = document.createElement('article');
     const link = document.createElement('a');
     const img = document.createElement('img');
@@ -31,15 +32,15 @@ class AppList extends HTMLElement {
     link.href = '#';
     link.title = `View ${restaurant.name} detail`;
 
-    img.src = restaurant.pictureId;
+    img.src = DicodingRestaurant.image(DicodingRestaurant.IMAGE_SMALL, restaurant.pictureId);
     img.alt = `${restaurant.name} image`;
 
     title.innerText = restaurant.name;
 
-    location.classList.add(appMainStyle.location);
+    location.classList.add(appListStyle.location);
     location.innerText = restaurant.city;
 
-    rating.classList.add(appMainStyle.rating);
+    rating.classList.add(appListStyle.rating);
     rating.innerText = 'Rating';
 
     rate.innerText = restaurant.rating;
@@ -61,8 +62,10 @@ class AppList extends HTMLElement {
   render() {
     this.innerHTML = this.html;
 
-    this.querySelector(`.${appMainStyle.wrapper}`).append(...this.restaurants);
+    // this.querySelector(`.${appListStyle.wrapper}`).append(...this.restaurants);
   }
 }
 
 customElements.define('app-list', AppList);
+
+export default AppList;
