@@ -6,10 +6,15 @@ import './views/components/app-list';
 import './views/components/app-recipe';
 import './views/components/app-footer';
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
 const app = new App({
   content: document.getElementById('content'),
 });
 
 window.addEventListener('hashchange', app.render);
-window.addEventListener('load', app.render);
+
+window.addEventListener('load', () => {
+  app.render();
+  swRegister();
+});
