@@ -11,6 +11,12 @@ class DicodingRestaurant {
     return responseJSON.restaurants;
   }
 
+  static async detail(id) {
+    const response = await fetch(ENDPOINTS.DETAIL(id));
+    const responseJSON = await response.json();
+    return responseJSON.restaurant;
+  }
+
   static image(resolution, id) {
     return ENDPOINTS.IMAGE(resolution, id);
   }

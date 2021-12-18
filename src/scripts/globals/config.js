@@ -1,5 +1,5 @@
 const CONFIG = {
-  CACHE_NAME: 'Restawuran-V1',
+  CACHE_NAME: new Date().toISOString(),
 };
 
 export default CONFIG;

@@ -1,17 +1,14 @@
 import appListStyle from '../../../styles/components/app-list.scss';
 import container from '../../../styles/container.scss';
 import DicodingRestaurant from '../../globals/dicoding-restaurant/dicoding-restaurant';
-// import { restaurants } from '../../../DATA.json';
 
 class AppList extends HTMLElement {
   constructor() {
     super();
 
-    // this._restaurants = restaurants.map(AppList.renderCard);
-
     this.html = `
         <div class="${container.lg}">
-            <h2>Browse All Restaurants</h2>
+            <h1>Browse All Restaurants</h1>
             <div id="restaurants" class="${appListStyle.wrapper}"></div>
         </div>
     `;
@@ -29,7 +26,7 @@ class AppList extends HTMLElement {
     const body = document.createElement('section');
     const description = document.createElement('p');
 
-    link.href = '#';
+    link.href = `/#/restaurant/${restaurant.id}`;
     link.title = `View ${restaurant.name} detail`;
 
     img.src = DicodingRestaurant.image(DicodingRestaurant.IMAGE_SMALL, restaurant.pictureId);
@@ -61,8 +58,6 @@ class AppList extends HTMLElement {
 
   render() {
     this.innerHTML = this.html;
-
-    // this.querySelector(`.${appListStyle.wrapper}`).append(...this.restaurants);
   }
 }
 

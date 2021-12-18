@@ -21,7 +21,7 @@ class AppHero extends HTMLElement {
         <div id="hero">
             <div class="${appHeroStyle.images}"></div>
             <div class="${appHeroStyle.caption}">
-                <h1>Your destination for all things delicious.</h1>
+                <h2>Your destination for all things delicious.</h2>
             </div>
         </div>
     `;
