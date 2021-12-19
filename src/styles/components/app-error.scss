@@ -1,0 +1,17 @@
+app-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  svg {
+    height: 36px;
+  }
+
+  span {
+    display: block;
+    padding: 5px 6px 0;
+    font-size: 18px;
+  }
+}

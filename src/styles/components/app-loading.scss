@@ -1,0 +1,49 @@
+app-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  div {
+    position: relative;
+    display: block;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 4px solid #d7d7d7;
+    animation: spin 3s infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -100%);
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: black;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    50% {
+      transform: rotate(1.5turn);
+    }
+    to {
+      transform: rotate(3turn);
+    }
+  }
+
+  & > span {
+    display: block;
+    padding: 5px 6px 0;
+    font-size: 18px;
+  }
+}

@@ -10,13 +10,23 @@ class Index extends Page {
   }
 
   static async created() {
+    const restaurantContainer = document.getElementById('restaurants');
+    restaurantContainer.innerHTML = '<app-loading></app-loading>';
+
     const restaurants = await DicodingRestaurant.list();
     const restaurantHTML = restaurants.map(AppList.restaurantCard);
-    document.getElementById('restaurants').append(...restaurantHTML);
+
+    restaurantContainer.innerHTML = '';
+    restaurantContainer.append(...restaurantHTML);
+
+    const recipeContainer = document.getElementById('recipe');
+    recipeContainer.innerHTML = '<app-loading></app-loading>';
 
     const recipe = await TheMealDB.random();
     const recipeHTML = AppRecipe.recipeCard(recipe);
-    document.getElementById('recipe').append(...recipeHTML);
+
+    recipeContainer.innerHTML = '';
+    recipeContainer.append(...recipeHTML);
   }
 }
 
