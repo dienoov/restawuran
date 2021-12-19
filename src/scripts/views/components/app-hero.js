@@ -19,7 +19,7 @@ class AppHero extends HTMLElement {
 
     this.html = `
         <div id="hero">
-            <div class="${appHeroStyle.images}"></div>
+            <div id="hero-images" class="${appHeroStyle.images}"></div>
             <div class="${appHeroStyle.caption}">
                 <h2>Your destination for all things delicious.</h2>
             </div>
@@ -34,7 +34,7 @@ class AppHero extends HTMLElement {
   render() {
     this.innerHTML = this.html;
 
-    this.querySelector(`.${appHeroStyle.images}`).append(...this.images);
+    document.getElementById('hero-images').append(...this.images);
     this.images[this.index].classList.add(appHeroStyle.active);
 
     setInterval(() => {

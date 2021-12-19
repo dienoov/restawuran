@@ -7,6 +7,7 @@ import './views/components/app-recipe';
 import './views/components/app-footer';
 import './views/components/app-error';
 import './views/components/app-loading';
+import './views/components/app-skip';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 
