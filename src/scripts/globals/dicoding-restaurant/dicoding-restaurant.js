@@ -17,6 +17,16 @@ class DicodingRestaurant {
     return responseJSON.restaurant;
   }
 
+  static async review(data) {
+    const response = await fetch(ENDPOINTS.REVIEW, {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const responseJSON = await response.json();
+    return responseJSON.customerReviews;
+  }
+
   static image(resolution, id) {
     return ENDPOINTS.IMAGE(resolution, id);
   }

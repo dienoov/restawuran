@@ -13,6 +13,28 @@ class Restaurant extends Page {
     const restaurant = await DicodingRestaurant.detail(url.id);
     const restaurantHTML = AppDetail.restaurantDetail(restaurant);
     document.getElementById('restaurant').innerHTML = restaurantHTML;
+
+    const formReview = document.getElementById('form-review');
+    formReview.addEventListener('submit', this.submitReview);
+  }
+
+  static async submitReview(ev) {
+    ev.preventDefault();
+
+    const id = document.getElementById('field-id');
+    const name = document.getElementById('field-name');
+    const review = document.getElementById('field-review');
+
+    const reviews = await DicodingRestaurant.review({
+      id: id.value,
+      name: name.value,
+      review: review.value,
+    });
+
+    document.getElementById('reviews').innerHTML = reviews.reduce(AppDetail.restaurantReview, '');
+
+    name.value = '';
+    review.value = '';
   }
 }
 

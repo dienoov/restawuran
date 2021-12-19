@@ -16,11 +16,22 @@ class AppDetail extends HTMLElement {
     return ul;
   }
 
+  static restaurantReview(div, review) {
+    return `${div}
+            <div>
+                <h4>${review.name}</h4>
+                <time>${review.date}</time>
+                <p>${review.review}</p>
+            </div>`;
+  }
+
   static restaurantDetail(restaurant) {
     const imgUrl = DicodingRestaurant.image(DicodingRestaurant.IMAGE_LARGE, restaurant.pictureId);
 
     const foods = restaurant.menus.foods.reduce(this.restaurantMenu, document.createElement('ul'));
     const drinks = restaurant.menus.drinks.reduce(this.restaurantMenu, document.createElement('ul'));
+
+    const reviews = restaurant.customerReviews.reduce(this.restaurantReview, '');
 
     return `
         <article>
@@ -44,6 +55,20 @@ class AppDetail extends HTMLElement {
                     <li><h3>Foods</h3>${foods.outerHTML}</li>
                     <li><h3>Drinks</h3>${drinks.outerHTML}</li>
                 </ul>
+            </section>
+            <section class="${appDetailStyle.review}">
+                <form id="form-review">
+                    <h2>Write a Review</h2>
+                    <input type="hidden" id="field-id" value="${restaurant.id}">
+                    <label for="field-name">Name</label>
+                    <input type="text" id="field-name" placeholder="Enter your name" required>
+                    <label for="field-review">Review</label>
+                    <textarea id="field-review" rows="5" placeholder="Write your review" required></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+                <div id="reviews" class="${appDetailStyle.reviews}">
+                    ${reviews}
+                </div>
             </section>
         </article>
     `;
