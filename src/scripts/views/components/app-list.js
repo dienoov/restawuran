@@ -9,7 +9,7 @@ class AppList extends HTMLElement {
     this.html = `
         <div class="${container.lg}">
             <h1>Browse All Restaurants</h1>
-            <div id="restaurants" class="${appListStyle.wrapper}"></div>
+            <div id="restaurants" class="${appListStyle.wrapper}" tabindex="0"></div>
         </div>
     `;
   }

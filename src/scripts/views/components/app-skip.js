@@ -4,12 +4,12 @@ class AppSkip extends HTMLElement {
 
     this.html = '<a href="#content">Skip to Content</a>';
 
-    this.addEventListener('click', this.toContent);
+    this.addEventListener('click', AppSkip.toContent);
   }
 
-  toContent(ev) {
+  static toContent(ev) {
     ev.preventDefault();
-    document.getElementById('content').scrollIntoView();
+    document.getElementById('content').focus();
   }
 
   connectedCallback() {
