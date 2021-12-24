@@ -19,7 +19,7 @@ class AppList extends HTMLElement {
     const link = document.createElement('a');
     const img = document.createElement('img');
     const header = document.createElement('header');
-    const title = document.createElement('h3');
+    const title = document.createElement('h2');
     const location = document.createElement('span');
     const rating = document.createElement('div');
     const rate = document.createElement('span');

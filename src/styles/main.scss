@@ -2,24 +2,28 @@
   font-family: 'Post Grotesk';
   src: url("../fonts/PostGrotesk-Book-subset.woff");
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Post Grotesk';
   src: url("../fonts/PostGrotesk-Medium-subset.woff");
   font-weight: 500;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Post Grotesk';
   src: url("../fonts/PostGrotesk-Bold-subset.woff");
   font-weight: 700;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Sharp Sans';
   src: url("../fonts/SharpSansDispNo2-Bold.ttf");
   font-weight: 700;
+  font-display: swap;
 }
 
 *, *::before, *::after {
