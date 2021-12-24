@@ -32,6 +32,8 @@ class AppList extends HTMLElement {
     const { pictureId } = restaurant;
     img.dataset.src = DicodingRestaurant.image(DicodingRestaurant.IMAGE_SMALL, pictureId);
     img.alt = `${restaurant.name} image`;
+    img.width = 360;
+    img.height = 300;
     img.classList.add('lazyload');
 
     title.innerText = restaurant.name;

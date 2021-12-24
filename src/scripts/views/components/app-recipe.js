@@ -37,6 +37,8 @@ class AppRecipe extends HTMLElement {
 
     img.dataset.src = meal.strMealThumb;
     img.alt = meal.strMeal;
+    img.width = 500;
+    img.height = 500;
     img.classList.add('lazyload');
 
     title.innerText = meal.strMeal;

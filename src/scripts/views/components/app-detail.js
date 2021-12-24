@@ -26,9 +26,10 @@ class AppDetail extends HTMLElement {
   }
 
   static restaurantDetail(restaurant) {
-    const imageSmall = DicodingRestaurant.image(DicodingRestaurant.IMAGE_SMALL, restaurant.pictureId);
-    const imageMedium = DicodingRestaurant.image(DicodingRestaurant.IMAGE_MEDIUM, restaurant.pictureId);
-    const imageLarge = DicodingRestaurant.image(DicodingRestaurant.IMAGE_LARGE, restaurant.pictureId);
+    const { pictureId } = restaurant;
+    const imageSmall = DicodingRestaurant.image(DicodingRestaurant.IMAGE_SMALL, pictureId);
+    const imageMedium = DicodingRestaurant.image(DicodingRestaurant.IMAGE_MEDIUM, pictureId);
+    const imageLarge = DicodingRestaurant.image(DicodingRestaurant.IMAGE_LARGE, pictureId);
 
     const foods = restaurant.menus.foods.reduce(this.restaurantMenu, document.createElement('ul'));
     const drinks = restaurant.menus.drinks.reduce(this.restaurantMenu, document.createElement('ul'));
@@ -42,7 +43,7 @@ class AppDetail extends HTMLElement {
                 <picture>
                     <source media="(max-width: 576px)" data-srcset="${imageSmall}">
                     <source media="(max-width: 992px)" data-srcset="${imageMedium}">
-                    <img data-src="${imageLarge}" alt="${restaurant.name}" class="lazyload">
+                    <img data-src="${imageLarge}" alt="${restaurant.name}" width="1200" height="400" class="lazyload">
                 </picture>
             </header>
             <section class="${appDetailStyle.info}">
