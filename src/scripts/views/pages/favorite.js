@@ -22,6 +22,8 @@ class Favorite extends Page {
     } else {
       container.outerHTML = '<app-error data-msg="You have no favorite restaurant"></app-error>';
     }
+
+    document.querySelector('footer').style.display = 'block';
   }
 }
 

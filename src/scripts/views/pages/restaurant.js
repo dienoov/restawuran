@@ -31,6 +31,8 @@ class Restaurant extends Page {
     } catch (e) {
       container.innerHTML = '<app-error data-msg="You have no internet connection"></app-error>';
     }
+
+    document.querySelector('footer').style.display = 'block';
   }
 
   static async toggleFavorite(ev) {

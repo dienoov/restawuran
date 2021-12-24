@@ -26,6 +26,8 @@ class Index extends Page {
 
     recipeContainer.innerHTML = '';
     recipeContainer.append(...recipeHTML);
+
+    document.querySelector('footer').style.display = 'block';
   }
 }
 

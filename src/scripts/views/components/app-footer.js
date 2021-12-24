@@ -10,7 +10,7 @@ class AppFooter extends HTMLElement {
     super();
 
     this.html = `
-        <footer>
+        <footer style="display: none">
             <div class="${container.lg}">
                 <div class="${appFooterStyle.wrapper}">
                     <div class="${appFooterStyle.social}">
