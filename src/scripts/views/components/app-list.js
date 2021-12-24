@@ -62,6 +62,12 @@ class AppList extends HTMLElement {
 
   render() {
     this.innerHTML = this.html;
+
+    for (let i = 0; i < 20; i += 1) {
+      const skeleton = document.createElement('div');
+      skeleton.classList.add(appListStyle.skeleton);
+      document.getElementById('restaurants').append(skeleton);
+    }
   }
 }
 

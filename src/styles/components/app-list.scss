@@ -1,4 +1,39 @@
 app-list {
+  --card-padding: 24px;
+  --card-height: 330px;
+  --card-skeleton: linear-gradient(rgba(0, 0, 0, .05) var(--card-height), transparent 0);
+
+  --rating-size: 32px;
+  --rating-position: 92% 220px;
+  --rating-skeleton: linear-gradient(rgba(255, 255, 255, .5) var(--title-height), transparent 0);
+
+  --title-height: 32px;
+  --title-width: 70%;
+  --title-position: var(--card-padding) 220px;
+  --title-skeleton: linear-gradient(rgba(255, 255, 255, .5) var(--title-height), transparent 0);
+
+  --desc-line-height: 16px;
+  --desc-line-skeleton: linear-gradient(rgba(255, 255, 255, .5) var(--desc-line-height), transparent 0);
+  --desc-line-1-width: 86%;
+  --desc-line-1-position: var(--card-padding) 270px;
+  --desc-line-2-width: 86%;
+  --desc-line-2-position: var(--card-padding) 295px;
+
+  --footer-height: 130px;
+  --footer-position: 0 calc(var(--card-height) - var(--footer-height));
+  --footer-skeleton: linear-gradient(rgba(255, 255, 255, .25) var(--footer-height), transparent 0);
+
+  --blur-width: 200px;
+  --blur-size: var(--blur-width) calc(var(--card-height) - var(--footer-height));
+
+  @media (min-width: 576px) {
+    --card-height: 430px;
+    --rating-position: 92% 320px;
+    --title-position: var(--card-padding) 320px;
+    --desc-line-1-position: var(--card-padding) 370px;
+    --desc-line-2-position: var(--card-padding) 395px;
+  }
+
   display: block;
   padding-top: 60px;
   padding-bottom: 60px;
@@ -55,7 +90,7 @@ app-list {
       transition: box-shadow .3s ease-out;
 
       &:hover {
-        box-shadow: -12px 12px 12px  rgba(0, 0, 0, .1);
+        box-shadow: -12px 12px 12px rgba(0, 0, 0, .1);
       }
 
       header, section {
@@ -120,6 +155,57 @@ app-list {
         overflow: hidden;
         opacity: .8;
       }
+    }
+  }
+
+  .skeleton {
+    width: 100%;
+    height: var(--card-height);
+
+    &:empty::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      background-image: linear-gradient(90deg, rgba(black, 0) 0, rgba(black, .1) 50%, rgba(black, 0) 100%),
+      var(--title-skeleton),
+      var(--desc-line-skeleton),
+      var(--desc-line-skeleton),
+      var(--rating-skeleton),
+      var(--footer-skeleton),
+      var(--card-skeleton);
+
+      background-size: var(--blur-size),
+      var(--title-width) var(--title-height),
+      var(--desc-line-1-width) var(--desc-line-height),
+      var(--desc-line-2-width) var(--desc-line-height),
+      var(--rating-size) var(--rating-size),
+      100% var(--footer-height),
+      100% 100%;
+
+      background-position: -150% 0,
+      var(--title-position),
+      var(--desc-line-1-position),
+      var(--desc-line-2-position),
+      var(--rating-position),
+      var(--footer-position),
+      0 0;
+
+      background-repeat: no-repeat;
+      animation: loading 1.5s infinite;
+    }
+  }
+
+  @keyframes loading {
+    to {
+      background-position: 350% 0,
+      var(--title-position),
+      var(--desc-line-1-position),
+      var(--desc-line-2-position),
+      var(--rating-position),
+      var(--footer-position),
+      0 0;
     }
   }
 }

@@ -11,7 +11,6 @@ class Index extends Page {
 
   static async created() {
     const restaurantContainer = document.getElementById('restaurants');
-    restaurantContainer.innerHTML = '<app-loading></app-loading>';
 
     const restaurants = await DicodingRestaurant.list();
     const restaurantHTML = restaurants.map(AppList.restaurantCard);

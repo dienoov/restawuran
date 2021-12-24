@@ -17,6 +17,7 @@ class Favorite extends Page {
 
     if (restaurants.length) {
       const restaurantHTML = restaurants.map(AppList.restaurantCard);
+      container.innerHTML = '';
       container.append(...restaurantHTML);
     } else {
       container.outerHTML = '<app-error data-msg="You have no favorite restaurant"></app-error>';
