@@ -3,7 +3,7 @@ import FavoriteIdb from '../src/scripts/data/favorite-idb';
 
 describe('Remove from favorite restaurant', () => {
   const addFavoriteButton = () => {
-    document.body.innerHTML = '<div id="favorite"></div>';
+    document.body.innerHTML = '<button id="favorite"></div>';
   };
 
   beforeEach(async () => {

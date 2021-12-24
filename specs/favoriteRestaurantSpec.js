@@ -3,7 +3,7 @@ import FavoriteIdb from '../src/scripts/data/favorite-idb';
 
 describe('Add to favorite restaurant', () => {
   const addFavoriteButton = () => {
-    document.body.innerHTML = '<div id="favorite"></div>';
+    document.body.innerHTML = '<button id="favorite"></button>';
   };
 
   beforeEach(() => {

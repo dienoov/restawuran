@@ -3,6 +3,7 @@ import UrlParser from '../../routes/url-parser';
 import DicodingRestaurant from '../../globals/dicoding-restaurant/dicoding-restaurant';
 import AppDetail from '../components/app-detail';
 import FavoriteButtonPresenter from '../../utils/favorite-button-presenter';
+import FavoriteIdb from '../../data/favorite-idb';
 
 class Restaurant extends Page {
   static async render() {
@@ -23,7 +24,9 @@ class Restaurant extends Page {
       formReview.addEventListener('submit', this.submitReview);
 
       const button = new FavoriteButtonPresenter({
-        button: document.getElementById('favorite'), restaurant,
+        button: document.getElementById('favorite'),
+        favoriteRestaurants: FavoriteIdb,
+        restaurant,
       });
       await button.render();
     } catch (e) {

@@ -21,6 +21,10 @@ class FavoriteIdb {
   }
 
   static async put(data) {
+    if (!Object.prototype.hasOwnProperty.call(data, 'id')) {
+      return false;
+    }
+
     return (await this.dbPromise).put(OBJECT_STORE_NAME, data);
   }
 

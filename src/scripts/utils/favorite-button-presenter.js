@@ -1,9 +1,8 @@
-import FavoriteIdb from '../data/favorite-idb';
-
 class FavoriteButtonPresenter {
-  constructor({ button, restaurant }) {
+  constructor({ button, favoriteRestaurants, restaurant }) {
     this._button = button;
     this._restaurant = restaurant;
+    this._favoriteRestaurants = favoriteRestaurants;
   }
 
   async render() {
@@ -11,15 +10,15 @@ class FavoriteButtonPresenter {
 
     if (!id) return;
 
-    if (await FavoriteButtonPresenter._isExist(id)) {
+    if (await this._isExist(id)) {
       this._renderRemove();
     } else {
       this._renderAdd();
     }
   }
 
-  static async _isExist(id) {
-    const restaurant = await FavoriteIdb.find(id);
+  async _isExist(id) {
+    const restaurant = await this._favoriteRestaurants.find(id);
     return !!restaurant;
   }
 
@@ -27,7 +26,7 @@ class FavoriteButtonPresenter {
     this._button.innerText = 'Add to favorite';
     this._button.setAttribute('aria-label', 'Add to favorite');
     this._button.onclick = async () => {
-      await FavoriteIdb.put(this._restaurant);
+      await this._favoriteRestaurants.put(this._restaurant);
       await this.render();
     };
   }
@@ -36,7 +35,7 @@ class FavoriteButtonPresenter {
     this._button.innerText = 'Remove from favorite';
     this._button.setAttribute('aria-label', 'Remove from favorite');
     this._button.onclick = async () => {
-      await FavoriteIdb.delete(this._restaurant.id);
+      await this._favoriteRestaurants.delete(this._restaurant.id);
       await this.render();
     };
   }
