@@ -30,13 +30,14 @@ class AppHero extends HTMLElement {
       const img = document.createElement('img');
 
       small.media = '(max-width: 576px)';
-      small.srcset = image.small;
+      small.dataset.srcset = image.small;
 
       medium.media = '(max-width: 992px)';
-      medium.srcset = image.medium;
+      medium.dataset.srcset = image.medium;
 
-      img.src = image.large;
+      img.dataset.src = image.large;
       img.alt = '';
+      img.classList.add('lazyload');
 
       picture.append(small, medium, img);
 
