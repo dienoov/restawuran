@@ -51,7 +51,7 @@ class AppDetail extends HTMLElement {
                 <span class="${appDetailStyle.address}">${restaurant.address}</span>
                 <div class="${appDetailStyle.rating}">Rating<span>${restaurant.rating}</span></div>
             </section>
-            <button id="favorite" aria-label="Add to favorite">Add to favorite</button>
+            <button id="favorite"></button>
             <section class="${appDetailStyle.description}">
                 <h2>Description</h2>
                 <p>${restaurant.description}</p>

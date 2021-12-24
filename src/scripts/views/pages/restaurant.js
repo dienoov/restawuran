@@ -2,7 +2,7 @@ import Page from './page';
 import UrlParser from '../../routes/url-parser';
 import DicodingRestaurant from '../../globals/dicoding-restaurant/dicoding-restaurant';
 import AppDetail from '../components/app-detail';
-import FavoriteIdb from '../../data/favorite-idb';
+import FavoriteButtonPresenter from '../../utils/favorite-button-presenter';
 
 class Restaurant extends Page {
   static async render() {
@@ -22,45 +22,15 @@ class Restaurant extends Page {
       const formReview = document.getElementById('form-review');
       formReview.addEventListener('submit', this.submitReview);
 
-      const favoriteButton = document.getElementById('favorite');
-      await this.checkFavorite(restaurant.id, favoriteButton);
-      favoriteButton.addEventListener('click', this.toggleFavorite.bind({
-        checkFavorite: this.checkFavorite,
-        restaurant,
-      }));
+      const button = new FavoriteButtonPresenter({
+        button: document.getElementById('favorite'), restaurant,
+      });
+      await button.render();
     } catch (e) {
       container.innerHTML = '<app-error data-msg="You have no internet connection"></app-error>';
     }
 
     document.querySelector('footer').style.display = 'block';
-  }
-
-  static async toggleFavorite(ev) {
-    const exist = await this.checkFavorite(this.restaurant.id, ev.target);
-
-    if (exist) {
-      await FavoriteIdb.delete(this.restaurant.id);
-    } else {
-      await FavoriteIdb.put(this.restaurant);
-    }
-
-    this.checkFavorite(this.restaurant.id, ev.target);
-  }
-
-  static async checkFavorite(id, button) {
-    const exist = await FavoriteIdb.find(id);
-
-    if (exist) {
-      // eslint-disable-next-line no-param-reassign
-      button.innerText = 'Remove from favorite';
-      button.setAttribute('aria-label', 'Remove from favorite');
-    } else {
-      // eslint-disable-next-line no-param-reassign
-      button.innerText = 'Add to favorite';
-      button.setAttribute('aria-label', 'Add to favorite');
-    }
-
-    return !!exist;
   }
 
   static async submitReview(ev) {
