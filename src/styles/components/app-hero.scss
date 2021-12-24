@@ -5,14 +5,14 @@ app-hero {
   .images {
     background-color: black;
 
-    img {
+    img, picture {
       height: 400px;
       width: 100%;
       object-fit: cover;
       display: none;
       animation: fade 8s;
 
-      &.active {
+      &.active, &.active img {
         display: block;
       }
     }

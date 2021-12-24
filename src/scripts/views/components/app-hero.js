@@ -1,18 +1,46 @@
 import appHeroStyle from '../../../styles/components/app-hero.scss';
-import heroImage1 from '../../../images/heros/hero-image_1.jpg';
-import heroImage2 from '../../../images/heros/hero-image_2.jpg';
-import heroImage3 from '../../../images/heros/hero-image_3.jpg';
-import heroImage4 from '../../../images/heros/hero-image_4.jpg';
+import heroImageSmall1 from '../../../images/responsive/heros/hero-image_1-small.jpg';
+import heroImageMedium1 from '../../../images/responsive/heros/hero-image_1-medium.jpg';
+import heroImageLarge1 from '../../../images/responsive/heros/hero-image_1-large.jpg';
+import heroImageSmall2 from '../../../images/responsive/heros/hero-image_2-small.jpg';
+import heroImageMedium2 from '../../../images/responsive/heros/hero-image_2-medium.jpg';
+import heroImageLarge2 from '../../../images/responsive/heros/hero-image_2-large.jpg';
+import heroImageSmall3 from '../../../images/responsive/heros/hero-image_3-small.jpg';
+import heroImageMedium3 from '../../../images/responsive/heros/hero-image_3-medium.jpg';
+import heroImageLarge3 from '../../../images/responsive/heros/hero-image_3-large.jpg';
+import heroImageSmall4 from '../../../images/responsive/heros/hero-image_4-small.jpg';
+import heroImageMedium4 from '../../../images/responsive/heros/hero-image_4-medium.jpg';
+import heroImageLarge4 from '../../../images/responsive/heros/hero-image_4-large.jpg';
+
+const images = [
+  { small: heroImageSmall1, medium: heroImageMedium1, large: heroImageLarge1 },
+  { small: heroImageSmall2, medium: heroImageMedium2, large: heroImageLarge2 },
+  { small: heroImageSmall3, medium: heroImageMedium3, large: heroImageLarge3 },
+  { small: heroImageSmall4, medium: heroImageMedium4, large: heroImageLarge4 },
+];
 
 class AppHero extends HTMLElement {
   constructor() {
     super();
 
-    this.images = [heroImage1, heroImage2, heroImage3, heroImage4].map((image) => {
+    this.images = images.map((image) => {
+      const picture = document.createElement('picture');
+      const small = document.createElement('source');
+      const medium = document.createElement('source');
       const img = document.createElement('img');
-      img.src = image;
+
+      small.media = '(max-width: 576px)';
+      small.srcset = image.small;
+
+      medium.media = '(max-width: 992px)';
+      medium.srcset = image.medium;
+
+      img.src = image.large;
       img.alt = '';
-      return img;
+
+      picture.append(small, medium, img);
+
+      return picture;
     });
 
     this.index = 0;
