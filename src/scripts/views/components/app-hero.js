@@ -36,7 +36,7 @@ class AppHero extends HTMLElement {
       medium.dataset.srcset = image.medium;
 
       img.dataset.src = image.large;
-      img.alt = '';
+      img.alt = 'hero';
       img.classList.add('lazyload');
 
       picture.append(small, medium, img);

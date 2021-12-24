@@ -35,8 +35,9 @@ class AppRecipe extends HTMLElement {
 
     heading.innerText = 'Random Recipe';
 
-    img.src = meal.strMealThumb;
+    img.dataset.src = meal.strMealThumb;
     img.alt = meal.strMeal;
+    img.classList.add('lazyload');
 
     title.innerText = meal.strMeal;
 

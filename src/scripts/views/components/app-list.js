@@ -29,8 +29,10 @@ class AppList extends HTMLElement {
     link.href = `/#/restaurant/${restaurant.id}`;
     link.title = `View ${restaurant.name} detail`;
 
-    img.src = DicodingRestaurant.image(DicodingRestaurant.IMAGE_SMALL, restaurant.pictureId);
+    const { pictureId } = restaurant;
+    img.dataset.src = DicodingRestaurant.image(DicodingRestaurant.IMAGE_SMALL, pictureId);
     img.alt = `${restaurant.name} image`;
+    img.classList.add('lazyload');
 
     title.innerText = restaurant.name;
 
